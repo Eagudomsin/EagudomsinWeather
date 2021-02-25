@@ -2,7 +2,7 @@ let weather = {
     apiKey: "f110c7548f4fbd41091162c8006d2951",
     fetchWeather: function (city) {
         fetch(
-            `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
+            `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}&fbclid=IwAR0flGDKUCeNP4ezglCgvCmzraFwnTTjG59fiz91nrrCZS_nNuIYS9yQ6e8`
         ).then((response) => {
             if (!response.ok) {
               document.querySelector(".weather").classList.remove("loading");
