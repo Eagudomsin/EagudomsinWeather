@@ -30,7 +30,12 @@ let weather = {
         document.querySelector(".speed").innerText = `Wind Speed: ${speed.toFixed(2)} km/h`;
 
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage ="url('https://source.unsplash.com/1600x900/?" + name + "')";
+
+        if(screen.width < screen.height) {
+                document.body.style.backgroundImage ="url('https://source.unsplash.com/900x1600/?" + name + "')";
+        } else {
+                document.body.style.backgroundImage ="url('https://source.unsplash.com/1600x900/?" + name + "')";
+        }
     },
     search: function () {
         this.fetchWeather(document.querySelector("#search-box").value);
@@ -49,4 +54,8 @@ document.querySelector("#search-box").addEventListener("keyup", function (event)
     }
 });
 
-weather.fetchWeather("bangkok");
+window.onload = function () {
+    if(screen.width < screen.height) {
+        document.body.style.backgroundImage ="url('https://source.unsplash.com/900x1600/?landscape')";
+    }
+}
